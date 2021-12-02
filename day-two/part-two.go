@@ -23,8 +23,6 @@ func main_two() {
 	zpos := 0
 	aim := 0
 
-	fmt.Print(len(dat))
-
 	for i := 0; i < len(dat); i++ {
 
 		fwd, _ := regexp.Compile("forward")
@@ -53,5 +51,6 @@ func main_two() {
 		}
 	}
 
-	fmt.Printf("Answer: %d", xpos*zpos)
+	results := fmt.Sprintf("Answer: %d", xpos*zpos)
+	fmt.Println(results)
 }

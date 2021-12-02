@@ -22,8 +22,6 @@ func main_one() {
 	xpos := 0
 	zpos := 0
 
-	fmt.Print(len(dat))
-
 	for i := 0; i < len(dat); i++ {
 
 		fwd, _ := regexp.Compile("forward")
@@ -45,5 +43,6 @@ func main_one() {
 			fmt.Println("It doesn't match")
 		}
 	}
-	fmt.Printf("Answer: %d", xpos*zpos)
+	results := fmt.Sprintf("Answer: %d", xpos*zpos)
+	fmt.Println(results)
 }
