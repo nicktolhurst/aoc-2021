@@ -1,0 +1,15 @@
+C:\Local\Personal\Advent\day-three\bin\Debug\net6.0\day-three.exe
+C:\Local\Personal\Advent\day-three\bin\Debug\net6.0\day-three.deps.json
+C:\Local\Personal\Advent\day-three\bin\Debug\net6.0\day-three.runtimeconfig.json
+C:\Local\Personal\Advent\day-three\bin\Debug\net6.0\day-three.dll
+C:\Local\Personal\Advent\day-three\bin\Debug\net6.0\ref\day-three.dll
+C:\Local\Personal\Advent\day-three\bin\Debug\net6.0\day-three.pdb
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.csproj.AssemblyReference.cache
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.GeneratedMSBuildEditorConfig.editorconfig
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.AssemblyInfoInputs.cache
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.AssemblyInfo.cs
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.csproj.CoreCompileInputs.cache
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.dll
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\ref\day-three.dll
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.pdb
+C:\Local\Personal\Advent\day-three\obj\Debug\net6.0\day-three.genruntimeconfig.cache
