@@ -1,17 +1,22 @@
 
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
 static class DayThree
 {
-    private static readonly string[] report = File.ReadAllLines(@"C:\Local\Personal\Advent\day-three\input");
+    private static readonly string[] Report = File.ReadAllLines(@"C:\Local\Personal\Advent\day-three\input");
 
     public static int PartOne()
     {
         List<char> gammaRateBinary = new();
 
-        for (int x = 0; x < 12; x++)
+        for (var position = 0; position < 12; position++)
         {
-            gammaRateBinary.Add(report
-                .Select(dat => dat[x])
-                .GroupBy(val => val)
+            gammaRateBinary.Add(Report
+                .Select(data => data[position])
+                .GroupBy(value => value)
                 .OrderByDescending(group => group.Count())
                 .First()
                 .First());
@@ -25,8 +30,8 @@ static class DayThree
 
     public static int PartTwo()
     {
-        var oxy = report.Filter(tieBreaker: '1');
-        var co2 = report.Filter(tieBreaker: '0', invertFilter: true);
+        var oxy = Report.Filter('1');
+        var co2 = Report.Filter('0', true);
 
         return oxy * co2;
     }
@@ -37,26 +42,26 @@ static class Helpers
     // IEnumerable<char> c to binary integer representative converter.
     public static int ToBinaryIntValues(this IEnumerable<char> c) => Convert.ToInt32(new string(c.ToArray()), 2);
 
-    // Epsilion converter delegate.
-    public static Func<char, char> InvertChars = c => c == '1' ? '0' : '1';
+    // Epsilon converter delegate.
+    public static readonly Func<char, char> InvertChars = c => c == '1' ? '0' : '1';
 
-    public static int Filter(this string[] dataset, char tieBreaker, bool invertFilter = false)
+    public static int Filter(this string[] report, char tieBreaker, bool invertFilter = false)
     {
-        for (int x = 0; x < 12 && dataset.Count() > 1; x++)
+        for (var position = 0; position < 12 && report.Length > 1; position++)
         {
-            // if (dataset.Count() == 1) break;
-            var group = dataset
-                .Select(dat => dat[x])
-                .GroupBy(val => val)
-                .OrderByDescending(group => group.Count());
+            var group = report
+                .Select(data => data[position])
+                .GroupBy(value => value)
+                .OrderByDescending(group => group.Count())
+                .ToList();
 
-            var most = group.First();
-            var least = group.Last();
+            var most = group[0].ToList();
+            var least = group[1].ToList();
 
-            char keep = most.Count() == least.Count() ? tieBreaker : !invertFilter ? most.First() : least.First();
-            dataset = dataset.Where(dat => dat[x] == keep).ToArray();
+            var keep = most.Count == least.Count ? tieBreaker : !invertFilter ? most[0] : least[0];
+            report = report.Where(data => data[position] == keep).ToArray();
         }
 
-        return Convert.ToInt32(dataset[0], 2);
+        return Convert.ToInt32(report[0], 2);
     }
 }
