@@ -15,7 +15,7 @@
             {
                 game.Boards[player].UpdateProgress(game.NumbersCalled);
 
-                if (!game.Boards[player].IsWinner) continue;
+                if (!game.Boards[player].IsWinner) break;
 
                 // Finish the game
                 game.InProgress = false;
@@ -28,7 +28,6 @@
                     .Sum();
 
                 Console.WriteLine($"PART 1 ANSWER: {sumOfAllRemainingBoardValues * Convert.ToInt32(game.NumbersToCall[round])}");
-                break;
             }
         }
     }
